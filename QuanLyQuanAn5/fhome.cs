@@ -332,9 +332,10 @@ namespace QuanLyQuanAn5
         private void button2_Click_1(object sender, EventArgs e)
         {
             command = connection.CreateCommand();
-            command.CommandText = "Insert into monan values(@mamonan, @gia )";
-            command.Parameters.AddWithValue("@mamonan", MaMonAn0);
-            command.Parameters.AddWithValue("@gia", Gia1);
+            command.CommandText = "Insert into monan values(@mamonan,@tenmonan, @gia )";
+            command.Parameters.AddWithValue("@mamonan", MaMonAn);
+            command.Parameters.AddWithValue("@tenmonan",TenMonAn );
+            command.Parameters.AddWithValue("@gia", Gia);
             command.ExecuteNonQuery();
             loaddata();
         }

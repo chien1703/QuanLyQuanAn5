@@ -96,6 +96,8 @@
             this.dgv4 = new System.Windows.Forms.DataGridView();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -428,6 +430,8 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label11);
+            this.tabPage2.Controls.Add(this.label10);
             this.tabPage2.Controls.Add(this.tbtimkiemmon);
             this.tabPage2.Controls.Add(this.btnhienthimon);
             this.tabPage2.Controls.Add(this.btntimkiemmon);
@@ -445,7 +449,7 @@
             // 
             // tbtimkiemmon
             // 
-            this.tbtimkiemmon.Location = new System.Drawing.Point(458, 110);
+            this.tbtimkiemmon.Location = new System.Drawing.Point(458, 78);
             this.tbtimkiemmon.Name = "tbtimkiemmon";
             this.tbtimkiemmon.Size = new System.Drawing.Size(352, 22);
             this.tbtimkiemmon.TabIndex = 6;
@@ -453,7 +457,7 @@
             // btnhienthimon
             // 
             this.btnhienthimon.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnhienthimon.Location = new System.Drawing.Point(834, 243);
+            this.btnhienthimon.Location = new System.Drawing.Point(825, 309);
             this.btnhienthimon.Name = "btnhienthimon";
             this.btnhienthimon.Size = new System.Drawing.Size(88, 34);
             this.btnhienthimon.TabIndex = 5;
@@ -463,7 +467,7 @@
             // btntimkiemmon
             // 
             this.btntimkiemmon.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btntimkiemmon.Location = new System.Drawing.Point(816, 103);
+            this.btntimkiemmon.Location = new System.Drawing.Point(825, 65);
             this.btntimkiemmon.Name = "btntimkiemmon";
             this.btntimkiemmon.Size = new System.Drawing.Size(88, 34);
             this.btntimkiemmon.TabIndex = 4;
@@ -473,7 +477,7 @@
             // btnsuamon
             // 
             this.btnsuamon.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnsuamon.Location = new System.Drawing.Point(570, 243);
+            this.btnsuamon.Location = new System.Drawing.Point(574, 309);
             this.btnsuamon.Name = "btnsuamon";
             this.btnsuamon.Size = new System.Drawing.Size(88, 34);
             this.btnsuamon.TabIndex = 3;
@@ -483,7 +487,7 @@
             // btnxoamon
             // 
             this.btnxoamon.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnxoamon.Location = new System.Drawing.Point(705, 243);
+            this.btnxoamon.Location = new System.Drawing.Point(722, 309);
             this.btnxoamon.Name = "btnxoamon";
             this.btnxoamon.Size = new System.Drawing.Size(88, 34);
             this.btnxoamon.TabIndex = 2;
@@ -493,7 +497,7 @@
             // btnthemmon
             // 
             this.btnthemmon.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnthemmon.Location = new System.Drawing.Point(441, 243);
+            this.btnthemmon.Location = new System.Drawing.Point(441, 309);
             this.btnthemmon.Name = "btnthemmon";
             this.btnthemmon.Size = new System.Drawing.Size(88, 34);
             this.btnthemmon.TabIndex = 1;
@@ -812,6 +816,26 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label10.Location = new System.Drawing.Point(461, 143);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(68, 17);
+            this.label10.TabIndex = 7;
+            this.label10.Text = "Tên Món:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label11.Location = new System.Drawing.Point(461, 229);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(68, 17);
+            this.label11.TabIndex = 8;
+            this.label11.Text = "Tên Món:";
+            // 
             // fhome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -914,5 +938,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnxoa1;
         private System.Windows.Forms.DataGridView dgv5;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
     }
 }
