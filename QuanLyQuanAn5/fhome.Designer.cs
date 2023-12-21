@@ -389,7 +389,7 @@
             this.btnsua.Name = "btnsua";
             this.btnsua.Size = new System.Drawing.Size(88, 34);
             this.btnsua.TabIndex = 9;
-            this.btnsua.Text = "sửa";
+            this.btnsua.Text = "Demo";
             this.btnsua.UseVisualStyleBackColor = true;
             // 
             // btnxoa
