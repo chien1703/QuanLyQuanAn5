@@ -106,6 +106,18 @@
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.label13 = new System.Windows.Forms.Label();
             this.dgv6 = new System.Windows.Forms.DataGridView();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.tbmahh = new System.Windows.Forms.TextBox();
+            this.tbgiahh = new System.Windows.Forms.TextBox();
+            this.tbsoluonghh = new System.Windows.Forms.TextBox();
+            this.tbtenhh = new System.Windows.Forms.TextBox();
+            this.btnnhapkho = new System.Windows.Forms.Button();
+            this.btnxuatkho = new System.Windows.Forms.Button();
+            this.label18 = new System.Windows.Forms.Label();
+            this.tbthanhtienhh = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -908,6 +920,18 @@
             // 
             // tabPage6
             // 
+            this.tabPage6.Controls.Add(this.tbthanhtienhh);
+            this.tabPage6.Controls.Add(this.label18);
+            this.tabPage6.Controls.Add(this.btnxuatkho);
+            this.tabPage6.Controls.Add(this.btnnhapkho);
+            this.tabPage6.Controls.Add(this.tbtenhh);
+            this.tabPage6.Controls.Add(this.tbsoluonghh);
+            this.tabPage6.Controls.Add(this.tbgiahh);
+            this.tabPage6.Controls.Add(this.tbmahh);
+            this.tabPage6.Controls.Add(this.label17);
+            this.tabPage6.Controls.Add(this.label16);
+            this.tabPage6.Controls.Add(this.label15);
+            this.tabPage6.Controls.Add(this.label14);
             this.tabPage6.Controls.Add(this.dgv6);
             this.tabPage6.Controls.Add(this.label13);
             this.tabPage6.Location = new System.Drawing.Point(4, 25);
@@ -917,6 +941,7 @@
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "6";
             this.tabPage6.UseVisualStyleBackColor = true;
+            this.tabPage6.Click += new System.EventHandler(this.tabPage6_Click);
             // 
             // label13
             // 
@@ -930,13 +955,115 @@
             // dgv6
             // 
             this.dgv6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv6.Location = new System.Drawing.Point(1, 200);
+            this.dgv6.Location = new System.Drawing.Point(1, 262);
             this.dgv6.Name = "dgv6";
             this.dgv6.RowHeadersWidth = 51;
             this.dgv6.RowTemplate.Height = 24;
-            this.dgv6.Size = new System.Drawing.Size(941, 350);
+            this.dgv6.Size = new System.Drawing.Size(941, 288);
             this.dgv6.TabIndex = 1;
+            this.dgv6.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv6_CellClick);
             this.dgv6.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv6_CellContentClick);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(53, 85);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(96, 16);
+            this.label14.TabIndex = 2;
+            this.label14.Text = "Tên Hàng Hóa";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(53, 51);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(91, 16);
+            this.label15.TabIndex = 3;
+            this.label15.Text = "Mã Hàng Hóa";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(53, 120);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(64, 16);
+            this.label16.TabIndex = 4;
+            this.label16.Text = "Số Lượng";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(53, 152);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(28, 16);
+            this.label17.TabIndex = 5;
+            this.label17.Text = "GIá";
+            // 
+            // tbmahh
+            // 
+            this.tbmahh.Location = new System.Drawing.Point(157, 45);
+            this.tbmahh.Name = "tbmahh";
+            this.tbmahh.Size = new System.Drawing.Size(100, 22);
+            this.tbmahh.TabIndex = 6;
+            // 
+            // tbgiahh
+            // 
+            this.tbgiahh.Location = new System.Drawing.Point(157, 146);
+            this.tbgiahh.Name = "tbgiahh";
+            this.tbgiahh.Size = new System.Drawing.Size(100, 22);
+            this.tbgiahh.TabIndex = 7;
+            // 
+            // tbsoluonghh
+            // 
+            this.tbsoluonghh.Location = new System.Drawing.Point(157, 114);
+            this.tbsoluonghh.Name = "tbsoluonghh";
+            this.tbsoluonghh.Size = new System.Drawing.Size(100, 22);
+            this.tbsoluonghh.TabIndex = 8;
+            // 
+            // tbtenhh
+            // 
+            this.tbtenhh.Location = new System.Drawing.Point(157, 79);
+            this.tbtenhh.Name = "tbtenhh";
+            this.tbtenhh.Size = new System.Drawing.Size(100, 22);
+            this.tbtenhh.TabIndex = 9;
+            // 
+            // btnnhapkho
+            // 
+            this.btnnhapkho.Location = new System.Drawing.Point(373, 67);
+            this.btnnhapkho.Name = "btnnhapkho";
+            this.btnnhapkho.Size = new System.Drawing.Size(75, 23);
+            this.btnnhapkho.TabIndex = 10;
+            this.btnnhapkho.Text = "Nhập Kho";
+            this.btnnhapkho.UseVisualStyleBackColor = true;
+            this.btnnhapkho.Click += new System.EventHandler(this.btnnhapkho_Click);
+            // 
+            // btnxuatkho
+            // 
+            this.btnxuatkho.Location = new System.Drawing.Point(373, 113);
+            this.btnxuatkho.Name = "btnxuatkho";
+            this.btnxuatkho.Size = new System.Drawing.Size(75, 23);
+            this.btnxuatkho.TabIndex = 11;
+            this.btnxuatkho.Text = "Xuất Kho";
+            this.btnxuatkho.UseVisualStyleBackColor = true;
+            this.btnxuatkho.Click += new System.EventHandler(this.btnxuatkho_Click);
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(53, 184);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(75, 16);
+            this.label18.TabIndex = 12;
+            this.label18.Text = "Thành Tiền";
+            this.label18.Click += new System.EventHandler(this.label18_Click);
+            // 
+            // tbthanhtienhh
+            // 
+            this.tbthanhtienhh.Location = new System.Drawing.Point(157, 178);
+            this.tbthanhtienhh.Name = "tbthanhtienhh";
+            this.tbthanhtienhh.Size = new System.Drawing.Size(100, 22);
+            this.tbthanhtienhh.TabIndex = 13;
             // 
             // fhome
             // 
@@ -1053,5 +1180,17 @@
         private System.Windows.Forms.TabPage tabPage6;
         private System.Windows.Forms.DataGridView dgv6;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox tbtenhh;
+        private System.Windows.Forms.TextBox tbsoluonghh;
+        private System.Windows.Forms.TextBox tbgiahh;
+        private System.Windows.Forms.TextBox tbmahh;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button btnxuatkho;
+        private System.Windows.Forms.Button btnnhapkho;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox tbthanhtienhh;
     }
 }

@@ -591,5 +591,48 @@ namespace QuanLyQuanAn5
         {
 
         }
+
+        private void label18_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgv6_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int i;
+            i = dgv6.CurrentRow.Index;
+            tbmahh.Text = dgv6.Rows[i].Cells[0].Value.ToString();
+            tbtenhh.Text = dgv6.Rows[i].Cells[1].Value.ToString();
+            tbsoluonghh.Text = dgv6.Rows[i].Cells[2].Value.ToString();
+            tbgiahh.Text = dgv6.Rows[i].Cells[3].Value.ToString();
+            tbthanhtienhh.Text = dgv6.Rows[i].Cells[4].Value.ToString();
+        }
+
+        private void btnnhapkho_Click(object sender, EventArgs e)
+        {
+            command = connection.CreateCommand();
+            command.CommandText = "Insert into khohang values(@mahanghoa,@tenhanghoa, @soluong, @gia, @thanhtien )";
+            command.Parameters.AddWithValue("@mahanghoa", tbmahh.Text);
+            command.Parameters.AddWithValue("@tenhanghoa", tbtenhh.Text);
+            command.Parameters.AddWithValue("@soluong", tbsoluonghh.Text);
+            command.Parameters.AddWithValue("@gia", tbgiahh.Text);
+            command.Parameters.AddWithValue("@thanhtien", tbthanhtienhh.Text);
+            command.ExecuteNonQuery();
+            loaddata11();
+        }
+
+        private void btnxuatkho_Click(object sender, EventArgs e)
+        {
+            command = connection.CreateCommand();
+            command.CommandText = "delete from khohang where MaHangHoa = @mahanghoa";
+            command.Parameters.AddWithValue("@mahanghoa", tbmahh.Text);
+            command.ExecuteNonQuery();
+            loaddata11();
+        }
     }
 }
