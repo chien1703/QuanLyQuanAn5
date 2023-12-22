@@ -98,6 +98,7 @@
             // 
             // btnthoat
             // 
+            this.btnthoat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnthoat.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnthoat.Location = new System.Drawing.Point(281, 353);
             this.btnthoat.Name = "btnthoat";
@@ -121,8 +122,10 @@
             // 
             // Form1
             // 
+            this.AcceptButton = this.btndangnhap;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnthoat;
             this.ClientSize = new System.Drawing.Size(416, 429);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnthoat);

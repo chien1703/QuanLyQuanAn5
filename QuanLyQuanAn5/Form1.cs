@@ -24,10 +24,26 @@ namespace QuanLyQuanAn5
 
         private void btndangnhap_Click(object sender, EventArgs e)
         {
-            fhome f = new fhome();
-            this.Hide();
-            f.ShowDialog();
-            this.Show();
+            string taiKhoanDung = "dta"; // Thay thế bằng tài khoản đúng
+            string matKhauDung = "1";    // Thay thế bằng mật khẩu đúng
+
+            string nhapTaiKhoan = tbtaikhoan.Text;
+            string nhapMatKhau = tbmatkhau.Text;
+
+            if (nhapTaiKhoan == taiKhoanDung && nhapMatKhau == matKhauDung)
+            {
+                // Tài khoản và mật khẩu đúng, mở form mới
+                fhome f = new fhome();
+                this.Hide();
+                f.ShowDialog();
+                this.Show();
+            }
+            else
+            {
+                // Tài khoản hoặc mật khẩu sai, hiển thị thông báo
+                MessageBox.Show("Tài khoản hoặc mật khẩu không đúng. Vui lòng thử lại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
         }
 
         private void btnthoat_Click(object sender, EventArgs e)

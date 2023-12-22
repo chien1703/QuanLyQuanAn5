@@ -106,6 +106,39 @@ namespace QuanLyQuanAn5
             adapter7.Fill(table7);
             dgv4.DataSource = table7;
         }
+        void loaddata8()
+        {
+            SqlDataAdapter adapter8 = new SqlDataAdapter();
+            DataTable table8 = new DataTable();
+            command = connection.CreateCommand();
+            command.CommandText = "select * from hoadon4";
+            adapter8.SelectCommand = command;
+            table8.Clear();
+            adapter8.Fill(table8);
+            dgv4.DataSource = table8;
+        }
+        void loaddata9()
+        {
+            SqlDataAdapter adapter9 = new SqlDataAdapter();
+            DataTable table9 = new DataTable();
+            command = connection.CreateCommand();
+            command.CommandText = "select * from hoadon5";
+            adapter9.SelectCommand = command;
+            table9.Clear();
+            adapter9.Fill(table9);
+            dgv4.DataSource = table9;
+        }
+        void loaddata10()
+        {
+            SqlDataAdapter adapter10 = new SqlDataAdapter();
+            DataTable table10 = new DataTable();
+            command = connection.CreateCommand();
+            command.CommandText = "select * from hoadon6";
+            adapter10.SelectCommand = command;
+            table10.Clear();
+            adapter10.Fill(table10);
+            dgv4.DataSource = table10;
+        }
         public fhome()
         {
             InitializeComponent();
@@ -233,12 +266,14 @@ namespace QuanLyQuanAn5
         {
             currentTableType = "hoadon1";
             loaddata3();
+            UpdateTotalPrice();
         }
 
         private void btnban2_Click(object sender, EventArgs e)
         {
             currentTableType = "hoadon2";
             loaddata6();
+            UpdateTotalPrice();
         }
 
         private void btnthem1_Click(object sender, EventArgs e)
@@ -265,6 +300,7 @@ namespace QuanLyQuanAn5
                 command.Parameters.AddWithValue("@gia", Gia1);
                 command.ExecuteNonQuery();
                 loaddata3();
+                UpdateTotalPrice();
             }
             else if (currentTableType == "hoadon2")
             {
@@ -274,6 +310,7 @@ namespace QuanLyQuanAn5
                 command.Parameters.AddWithValue("@gia", Gia1);
                 command.ExecuteNonQuery();
                 loaddata6();
+                UpdateTotalPrice();
             }
             else if (currentTableType == "hoadon3")
             {
@@ -283,6 +320,37 @@ namespace QuanLyQuanAn5
                 command.Parameters.AddWithValue("@gia", Gia1);
                 command.ExecuteNonQuery();
                 loaddata7();
+                UpdateTotalPrice();
+            }
+            else if (currentTableType == "hoadon4")
+            {
+                command = connection.CreateCommand();
+                command.CommandText = "Insert into hoadon4 values(@mamonan, @gia )";
+                command.Parameters.AddWithValue("@mamonan", MaMonAn0);
+                command.Parameters.AddWithValue("@gia", Gia1);
+                command.ExecuteNonQuery();
+                loaddata8();
+                UpdateTotalPrice();
+            }
+            else if (currentTableType == "hoadon5")
+            {
+                command = connection.CreateCommand();
+                command.CommandText = "Insert into hoadon5 values(@mamonan, @gia )";
+                command.Parameters.AddWithValue("@mamonan", MaMonAn0);
+                command.Parameters.AddWithValue("@gia", Gia1);
+                command.ExecuteNonQuery();
+                loaddata9();
+                UpdateTotalPrice();
+            }
+            else if (currentTableType == "hoadon6")
+            {
+                command = connection.CreateCommand();
+                command.CommandText = "Insert into hoadon6 values(@mamonan, @gia )";
+                command.Parameters.AddWithValue("@mamonan", MaMonAn0);
+                command.Parameters.AddWithValue("@gia", Gia1);
+                command.ExecuteNonQuery();
+                loaddata10();
+                UpdateTotalPrice();
             }
 
 
@@ -317,7 +385,29 @@ namespace QuanLyQuanAn5
                 command.ExecuteNonQuery();
                 loaddata7();
             }
+            else if (currentTableType == "hoadon4")
+            {
+                command = connection.CreateCommand();
+                command.CommandText = "DELETE FROM hoadon4\r\nWHERE id = (SELECT TOP 1 id FROM hoadon4 ORDER BY id DESC)";
+                command.ExecuteNonQuery();
+                loaddata8();
+            }
+            else if (currentTableType == "hoadon5")
+            {
+                command = connection.CreateCommand();
+                command.CommandText = "DELETE FROM hoadon5\r\nWHERE id = (SELECT TOP 1 id FROM hoadon5 ORDER BY id DESC)";
+                command.ExecuteNonQuery();
+                loaddata9();
+            }
+            else if (currentTableType == "hoadon6")
+            {
+                command = connection.CreateCommand();
+                command.CommandText = "DELETE FROM hoadon6\r\nWHERE id = (SELECT TOP 1 id FROM hoadon6 ORDER BY id DESC)";
+                command.ExecuteNonQuery();
+                loaddata10();
+            }
 
+            UpdateTotalPrice();
 
 
 
@@ -327,17 +417,152 @@ namespace QuanLyQuanAn5
         {
             currentTableType = "hoadon3";
             loaddata7();
+            UpdateTotalPrice();
         }
 
         private void button2_Click_1(object sender, EventArgs e)
         {
             command = connection.CreateCommand();
             command.CommandText = "Insert into monan values(@mamonan,@tenmonan, @gia )";
-            command.Parameters.AddWithValue("@mamonan", MaMonAn);
-            command.Parameters.AddWithValue("@tenmonan",TenMonAn );
-            command.Parameters.AddWithValue("@gia", Gia);
+            command.Parameters.AddWithValue("@mamonan", tbmamonan.Text);
+            command.Parameters.AddWithValue("@tenmonan",tbtenmon.Text );
+            command.Parameters.AddWithValue("@gia", tbgiamon.Text);
             command.ExecuteNonQuery();
             loaddata();
+            loaddata5();
+        }
+
+        private void btnsuamon_Click(object sender, EventArgs e)
+        {
+            command = connection.CreateCommand();
+            command.CommandText = "update monan set MaMonAn= @mamonan,TenMonAn=@tenmonan,Gia= @gia where MaMonAn= @mamonan";
+            command.Parameters.AddWithValue("@mamonan", tbmamonan.Text);
+            command.Parameters.AddWithValue("@tenmonan", tbtenmon.Text);
+            command.Parameters.AddWithValue("@gia", tbgiamon.Text);
+            command.ExecuteNonQuery();
+            loaddata();
+        }
+
+        private void btnxoamon_Click(object sender, EventArgs e)
+        {
+            command = connection.CreateCommand();
+            command.CommandText = "delete from monan where MaMonAn = @mamonan";
+            command.Parameters.AddWithValue("@mamonan", tbmamonan.Text);
+            command.ExecuteNonQuery();
+            loaddata();
+        }
+
+        private void dgv1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            int i;
+            i = dgv1.CurrentRow.Index;
+            tbmamonan.Text = dgv1.Rows[i].Cells[0].Value.ToString();
+            tbtenmon.Text = dgv1.Rows[i].Cells[1].Value.ToString();
+            tbgiamon.Text = dgv1.Rows[i].Cells[2].Value.ToString();
+        }
+
+        private void btntimkiemmon_Click(object sender, EventArgs e)
+        {
+            command = connection.CreateCommand();
+            command.CommandText = "select * from monan where TenMonAn like '%" + tbtimkiemmon.Text + "%' ";
+            adapter.SelectCommand = command;
+            table.Clear();
+            adapter.Fill(table);
+            dgv1.DataSource = table;
+        }
+
+        private void btnhienthimon_Click(object sender, EventArgs e)
+        {
+            loaddata();
+        }
+
+        private void tbtimkiemmon_TextChanged(object sender, EventArgs e)
+        {
+            command = connection.CreateCommand();
+            command.CommandText = "select * from monan where TenMonAn like '%" + tbtimkiemmon.Text + "%' ";
+            adapter.SelectCommand = command;
+            table.Clear();
+            adapter.Fill(table);
+            dgv1.DataSource = table;
+        }
+        private int CalculateTotalPrice()
+        {
+            int totalPrice = 0; // Khởi tạo giá trị mặc định
+
+            if (currentTableType == "hoadon1")
+            {
+                command = connection.CreateCommand();
+                command.CommandText = "SELECT SUM(ISNULL(Gia, 0)) FROM hoadon1";
+            }
+            else if (currentTableType == "hoadon2")
+            {
+                command = connection.CreateCommand();
+                command.CommandText = "SELECT SUM(ISNULL(Gia, 0)) FROM hoadon2";
+            }
+            else if (currentTableType == "hoadon3")
+            {
+                command = connection.CreateCommand();
+                command.CommandText = "SELECT SUM(ISNULL(Gia, 0)) FROM hoadon3";
+            }
+            else if (currentTableType == "hoadon4")
+            {
+                command = connection.CreateCommand();
+                command.CommandText = "SELECT SUM(ISNULL(Gia, 0)) FROM hoadon4";
+            }
+            else if (currentTableType == "hoadon5")
+            {
+                command = connection.CreateCommand();
+                command.CommandText = "SELECT SUM(ISNULL(Gia, 0)) FROM hoadon5";
+            }
+            else if (currentTableType == "hoadon6")
+            {
+                command = connection.CreateCommand();
+                command.CommandText = "SELECT SUM(ISNULL(Gia, 0)) FROM hoadon6";
+            }
+            else
+            {
+                return totalPrice; // Trả về giá trị mặc định nếu không phải các loại trên
+            }
+
+            // ExecuteScalar returns null if there are no records or the result is null
+            object result = command.ExecuteScalar();
+
+            // If the result is not null, parse the result
+            if (result != null && result != DBNull.Value)
+            {
+                totalPrice = Convert.ToInt32(result);
+            }
+
+            return totalPrice;
+
+
+        }
+        private void UpdateTotalPrice()
+        {
+            int totalPrice = CalculateTotalPrice();
+            tbtongtien.Text = totalPrice.ToString();
+        }
+
+        private void btnban4_Click(object sender, EventArgs e)
+        {
+            currentTableType = "hoadon4";
+            loaddata8();
+            UpdateTotalPrice();
+        }
+
+        private void btnban5_Click(object sender, EventArgs e)
+        {
+            currentTableType = "hoadon5";
+            loaddata9();
+            UpdateTotalPrice();
+        }
+
+        private void btnban6_Click(object sender, EventArgs e)
+        {
+            currentTableType = "hoadon6";
+            loaddata10();
+            UpdateTotalPrice();
         }
     }
 }
