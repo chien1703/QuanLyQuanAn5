@@ -16,7 +16,7 @@ namespace QuanLyQuanAn5
     {
         SqlConnection connection;
         SqlCommand command;
-        string str = @"Data Source=LAPTOP-DFVUFD44;Initial Catalog=QuanLyQuanAn5;Integrated Security=True";
+        string str = @"Data Source=DESKTOP-F166USU;Initial Catalog=QuanLyQuanAn5;Integrated Security=True";
         SqlDataAdapter adapter = new SqlDataAdapter();
         DataTable table = new DataTable();
 
@@ -139,6 +139,17 @@ namespace QuanLyQuanAn5
             adapter10.Fill(table10);
             dgv4.DataSource = table10;
         }
+        void loaddata11()
+        {
+            SqlDataAdapter adapter11 = new SqlDataAdapter();
+            DataTable table11 = new DataTable();
+            command = connection.CreateCommand();
+            command.CommandText = "select * from khohang";
+            adapter11.SelectCommand = command;
+            table11.Clear();
+            adapter11.Fill(table11);
+            dgv6.DataSource = table11;
+        }
         public fhome()
         {
             InitializeComponent();
@@ -190,6 +201,7 @@ namespace QuanLyQuanAn5
             loaddata2();
             loaddata4();
             loaddata5();
+            loaddata11();   
         }
         private int GetPriceByItemID(string itemID)
         {
@@ -563,6 +575,21 @@ namespace QuanLyQuanAn5
             currentTableType = "hoadon6";
             loaddata10();
             UpdateTotalPrice();
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnQLkhohang_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = tabPage6;
+        }
+
+        private void dgv6_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

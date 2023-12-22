@@ -59,7 +59,12 @@
             this.btnthem = new System.Windows.Forms.Button();
             this.dgv = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tbmamonan = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.tbgiamon = new System.Windows.Forms.TextBox();
+            this.tbtenmon = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.tbtimkiemmon = new System.Windows.Forms.TextBox();
             this.btnhienthimon = new System.Windows.Forms.Button();
             this.btntimkiemmon = new System.Windows.Forms.Button();
@@ -97,11 +102,10 @@
             this.dgv4 = new System.Windows.Forms.DataGridView();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.tbtenmon = new System.Windows.Forms.TextBox();
-            this.tbgiamon = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.tbmamonan = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
+            this.btnQLkhohang = new System.Windows.Forms.Button();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.label13 = new System.Windows.Forms.Label();
+            this.dgv6 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -115,6 +119,8 @@
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv4)).BeginInit();
+            this.tabPage6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv6)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -122,7 +128,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(45, 124);
+            this.label1.Location = new System.Drawing.Point(48, 49);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(114, 24);
             this.label1.TabIndex = 1;
@@ -135,7 +141,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(3, 148);
+            this.label2.Location = new System.Drawing.Point(3, 80);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(207, 24);
             this.label2.TabIndex = 2;
@@ -144,6 +150,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
+            this.panel1.Controls.Add(this.btnQLkhohang);
             this.panel1.Controls.Add(this.btnhoadon);
             this.panel1.Controls.Add(this.btnnhanvien);
             this.panel1.Controls.Add(this.btnbanan);
@@ -161,7 +168,7 @@
             this.btnhoadon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
             this.btnhoadon.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnhoadon.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnhoadon.Location = new System.Drawing.Point(0, 367);
+            this.btnhoadon.Location = new System.Drawing.Point(0, 324);
             this.btnhoadon.Name = "btnhoadon";
             this.btnhoadon.Size = new System.Drawing.Size(218, 51);
             this.btnhoadon.TabIndex = 8;
@@ -174,7 +181,7 @@
             this.btnnhanvien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
             this.btnnhanvien.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnnhanvien.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnnhanvien.Location = new System.Drawing.Point(0, 323);
+            this.btnnhanvien.Location = new System.Drawing.Point(0, 277);
             this.btnnhanvien.Name = "btnnhanvien";
             this.btnnhanvien.Size = new System.Drawing.Size(218, 51);
             this.btnnhanvien.TabIndex = 7;
@@ -187,7 +194,7 @@
             this.btnbanan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
             this.btnbanan.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnbanan.ForeColor = System.Drawing.Color.AliceBlue;
-            this.btnbanan.Location = new System.Drawing.Point(0, 278);
+            this.btnbanan.Location = new System.Drawing.Point(0, 227);
             this.btnbanan.Name = "btnbanan";
             this.btnbanan.Size = new System.Drawing.Size(218, 51);
             this.btnbanan.TabIndex = 6;
@@ -200,7 +207,7 @@
             this.btnmonan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
             this.btnmonan.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnmonan.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnmonan.Location = new System.Drawing.Point(0, 224);
+            this.btnmonan.Location = new System.Drawing.Point(0, 169);
             this.btnmonan.Name = "btnmonan";
             this.btnmonan.Size = new System.Drawing.Size(218, 57);
             this.btnmonan.TabIndex = 5;
@@ -213,7 +220,7 @@
             this.btnhome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
             this.btnhome.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnhome.ForeColor = System.Drawing.Color.White;
-            this.btnhome.Location = new System.Drawing.Point(0, 175);
+            this.btnhome.Location = new System.Drawing.Point(0, 116);
             this.btnhome.Name = "btnhome";
             this.btnhome.Size = new System.Drawing.Size(218, 52);
             this.btnhome.TabIndex = 4;
@@ -229,6 +236,7 @@
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Location = new System.Drawing.Point(217, 26);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -263,6 +271,7 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "1";
             this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // tbtrangthai
             // 
@@ -455,6 +464,37 @@
             this.tabPage2.Text = "2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // tbmamonan
+            // 
+            this.tbmamonan.Location = new System.Drawing.Point(554, 141);
+            this.tbmamonan.Name = "tbmamonan";
+            this.tbmamonan.Size = new System.Drawing.Size(251, 22);
+            this.tbmamonan.TabIndex = 1;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label12.Location = new System.Drawing.Point(442, 140);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(97, 19);
+            this.label12.TabIndex = 11;
+            this.label12.Text = "Mã Món Ăn:";
+            // 
+            // tbgiamon
+            // 
+            this.tbgiamon.Location = new System.Drawing.Point(554, 242);
+            this.tbgiamon.Name = "tbgiamon";
+            this.tbgiamon.Size = new System.Drawing.Size(251, 22);
+            this.tbgiamon.TabIndex = 3;
+            // 
+            // tbtenmon
+            // 
+            this.tbtenmon.Location = new System.Drawing.Point(554, 192);
+            this.tbtenmon.Name = "tbtenmon";
+            this.tbtenmon.Size = new System.Drawing.Size(251, 22);
+            this.tbtenmon.TabIndex = 2;
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -464,6 +504,16 @@
             this.label11.Size = new System.Drawing.Size(39, 19);
             this.label11.TabIndex = 8;
             this.label11.Text = "Giá:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label10.Location = new System.Drawing.Point(462, 193);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(77, 19);
+            this.label10.TabIndex = 7;
+            this.label10.Text = "Tên Món:";
             // 
             // tbtimkiemmon
             // 
@@ -843,46 +893,50 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // tbtenmon
+            // btnQLkhohang
             // 
-            this.tbtenmon.Location = new System.Drawing.Point(554, 192);
-            this.tbtenmon.Name = "tbtenmon";
-            this.tbtenmon.Size = new System.Drawing.Size(251, 22);
-            this.tbtenmon.TabIndex = 2;
+            this.btnQLkhohang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
+            this.btnQLkhohang.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnQLkhohang.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnQLkhohang.Location = new System.Drawing.Point(-3, 371);
+            this.btnQLkhohang.Name = "btnQLkhohang";
+            this.btnQLkhohang.Size = new System.Drawing.Size(218, 51);
+            this.btnQLkhohang.TabIndex = 9;
+            this.btnQLkhohang.Text = "QL Kho Hàng";
+            this.btnQLkhohang.UseVisualStyleBackColor = false;
+            this.btnQLkhohang.Click += new System.EventHandler(this.btnQLkhohang_Click);
             // 
-            // tbgiamon
+            // tabPage6
             // 
-            this.tbgiamon.Location = new System.Drawing.Point(554, 242);
-            this.tbgiamon.Name = "tbgiamon";
-            this.tbgiamon.Size = new System.Drawing.Size(251, 22);
-            this.tbgiamon.TabIndex = 3;
+            this.tabPage6.Controls.Add(this.dgv6);
+            this.tabPage6.Controls.Add(this.label13);
+            this.tabPage6.Location = new System.Drawing.Point(4, 25);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(942, 550);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "6";
+            this.tabPage6.UseVisualStyleBackColor = true;
             // 
-            // label10
+            // label13
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label10.Location = new System.Drawing.Point(462, 193);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(77, 19);
-            this.label10.TabIndex = 7;
-            this.label10.Text = "Tên Món:";
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(24, 19);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(110, 16);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "Quản lý kho hàng";
             // 
-            // tbmamonan
+            // dgv6
             // 
-            this.tbmamonan.Location = new System.Drawing.Point(554, 141);
-            this.tbmamonan.Name = "tbmamonan";
-            this.tbmamonan.Size = new System.Drawing.Size(251, 22);
-            this.tbmamonan.TabIndex = 1;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label12.Location = new System.Drawing.Point(442, 140);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(97, 19);
-            this.label12.TabIndex = 11;
-            this.label12.Text = "Mã Món Ăn:";
+            this.dgv6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv6.Location = new System.Drawing.Point(1, 200);
+            this.dgv6.Name = "dgv6";
+            this.dgv6.RowHeadersWidth = 51;
+            this.dgv6.RowTemplate.Height = 24;
+            this.dgv6.Size = new System.Drawing.Size(941, 350);
+            this.dgv6.TabIndex = 1;
+            this.dgv6.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv6_CellContentClick);
             // 
             // fhome
             // 
@@ -914,6 +968,9 @@
             this.tabPage5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv4)).EndInit();
+            this.tabPage6.ResumeLayout(false);
+            this.tabPage6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv6)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -992,5 +1049,9 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox tbmamonan;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button btnQLkhohang;
+        private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.DataGridView dgv6;
+        private System.Windows.Forms.Label label13;
     }
 }
