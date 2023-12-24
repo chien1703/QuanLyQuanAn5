@@ -634,5 +634,45 @@ namespace QuanLyQuanAn5
             command.ExecuteNonQuery();
             loaddata11();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = tabPage7;
+        }
+
+        private void tabPage7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDoi_Click(object sender, EventArgs e)
+        {
+            if(int.TryParse(tbinput.Text, out int inputValue))
+            {
+                int factor = 1;
+                if (cbtien.SelectedItem != null)
+                {
+                    if (cbtien.SelectedItem.ToString() == "USD")
+                    {
+                        factor = 24250000;
+                    }
+                    else if (cbtien.SelectedItem.ToString() == "GBP")
+                    {
+                        factor = 30790200;
+                    }
+                    else if (cbtien.SelectedItem.ToString() == "KRW")
+                    {
+                        factor = 18612;
+                    }
+                    else if (cbtien.SelectedItem.ToString() == "JPA")
+                    {
+                        factor = 170247;
+                    }
+                }
+
+                int result = inputValue * factor;
+                tboutput.Text = result.ToString();
+            }
+        }
     }
 }
