@@ -24,7 +24,7 @@ namespace QuanLyQuanAn5
 
         private void btndangnhap_Click(object sender, EventArgs e)
         {
-            string taiKhoanDung = "dta"; // Thay thế bằng tài khoản đúng
+            string taiKhoanDung = "admin"; // Thay thế bằng tài khoản đúng
             string matKhauDung = "1";    // Thay thế bằng mật khẩu đúng
 
             string nhapTaiKhoan = tbtaikhoan.Text;

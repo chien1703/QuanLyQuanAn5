@@ -16,7 +16,7 @@ namespace QuanLyQuanAn5
     {
         SqlConnection connection;
         SqlCommand command;
-        string str = @"Data Source=DESKTOP-F166USU;Initial Catalog=QuanLyQuanAn5;Integrated Security=True";
+        string str = @"Data Source=LAPTOP-DFVUFD44;Initial Catalog=QuanLyQuanAn5;Integrated Security=True";
         SqlDataAdapter adapter = new SqlDataAdapter();
         DataTable table = new DataTable();
 
@@ -700,10 +700,11 @@ namespace QuanLyQuanAn5
         private void btnthemhv_Click(object sender, EventArgs e)
         {
             command = connection.CreateCommand();
-            command.CommandText = "Insert into hoivien values(@SDT,@Email, @HoTenHv)";
+            command.CommandText = "Insert into hoivien values(@SDT,@Email, @HoTenHv,@id)";
             command.Parameters.AddWithValue("@SDT", tbsdthv.Text);
             command.Parameters.AddWithValue("@Email", tbemail.Text);
             command.Parameters.AddWithValue("@HoTenHv", tbhotenhv.Text);
+            command.Parameters.AddWithValue("@id", tbIDHv.Text);
             command.ExecuteNonQuery();
             loaddata12();
         }
@@ -715,6 +716,7 @@ namespace QuanLyQuanAn5
             tbsdthv.Text = dgv7.Rows[i].Cells[0].Value.ToString();
             tbemail.Text = dgv7.Rows[i].Cells[1].Value.ToString();
             tbhotenhv.Text = dgv7.Rows[i].Cells[2].Value.ToString();
+            tbIDHv.Text = dgv7.Rows[i].Cells[3].Value.ToString();
         }
 
         private void btnxoahv_Click(object sender, EventArgs e)
@@ -734,7 +736,7 @@ namespace QuanLyQuanAn5
         private void btnsuahv_Click(object sender, EventArgs e)
         {
             command = connection.CreateCommand();
-            command.CommandText = "UPDATE hoivien SET Email = @Email, HoTenHv = @HoTenHv, SDT = @SDT WHERE IDHv = @IDHv ";
+            command.CommandText = "UPDATE hoivien SET   SDT = @SDT,Email = @Email, HoTenHv = @HoTenHv WHERE IDHv = @IDHv ";
             command.Parameters.AddWithValue("@Email", tbemail.Text);
             command.Parameters.AddWithValue("@HoTenHv", tbhotenhv.Text);
             command.Parameters.AddWithValue("@SDT", tbsdthv.Text);
