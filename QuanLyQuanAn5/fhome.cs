@@ -699,16 +699,22 @@ namespace QuanLyQuanAn5
 
         private void btnthemhv_Click(object sender, EventArgs e)
         {
-
+            command = connection.CreateCommand();
+            command.CommandText = "Insert into hoivien values(@SDT,@Email, @HoTenHv)";
+            command.Parameters.AddWithValue("@SDT", tbsdthv.Text);
+            command.Parameters.AddWithValue("@Email", tbemail.Text);
+            command.Parameters.AddWithValue("@HoTenHv", tbhotenhv.Text);
+            command.ExecuteNonQuery();
+            loaddata12();
         }
 
         private void dgv7_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int i;
             i = dgv7.CurrentRow.Index;
-            tbhotenhv.Text = dgv7.Rows[i].Cells[0].Value.ToString();
-            tbsdthv.Text = dgv7.Rows[i].Cells[1].Value.ToString();
-            tbemail.Text = dgv7.Rows[i].Cells[2].Value.ToString();
+            tbsdthv.Text = dgv7.Rows[i].Cells[0].Value.ToString();
+            tbemail.Text = dgv7.Rows[i].Cells[1].Value.ToString();
+            tbhotenhv.Text = dgv7.Rows[i].Cells[2].Value.ToString();
         }
     }
 }
