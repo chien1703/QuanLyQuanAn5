@@ -138,6 +138,8 @@
             this.btnxoahv = new System.Windows.Forms.Button();
             this.btnsuahv = new System.Windows.Forms.Button();
             this.dgv7 = new System.Windows.Forms.DataGridView();
+            this.label24 = new System.Windows.Forms.Label();
+            this.tbIDHv = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -791,6 +793,7 @@
             this.button14.TabIndex = 22;
             this.button14.Text = "sửa";
             this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
             // button15
             // 
@@ -1182,6 +1185,8 @@
             // 
             // tabPage8
             // 
+            this.tabPage8.Controls.Add(this.tbIDHv);
+            this.tabPage8.Controls.Add(this.label24);
             this.tabPage8.Controls.Add(this.dgv7);
             this.tabPage8.Controls.Add(this.btnsuahv);
             this.tabPage8.Controls.Add(this.btnxoahv);
@@ -1276,6 +1281,7 @@
             this.btnxoahv.TabIndex = 8;
             this.btnxoahv.Text = "Xóa";
             this.btnxoahv.UseVisualStyleBackColor = true;
+            this.btnxoahv.Click += new System.EventHandler(this.btnxoahv_Click);
             // 
             // btnsuahv
             // 
@@ -1285,6 +1291,7 @@
             this.btnsuahv.TabIndex = 9;
             this.btnsuahv.Text = "Sửa";
             this.btnsuahv.UseVisualStyleBackColor = true;
+            this.btnsuahv.Click += new System.EventHandler(this.btnsuahv_Click);
             // 
             // dgv7
             // 
@@ -1297,6 +1304,22 @@
             this.dgv7.TabIndex = 10;
             this.dgv7.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv7_CellClick);
             this.dgv7.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(28, 178);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(20, 16);
+            this.label24.TabIndex = 11;
+            this.label24.Text = "ID";
+            // 
+            // tbIDHv
+            // 
+            this.tbIDHv.Location = new System.Drawing.Point(101, 172);
+            this.tbIDHv.Name = "tbIDHv";
+            this.tbIDHv.Size = new System.Drawing.Size(100, 22);
+            this.tbIDHv.TabIndex = 12;
             // 
             // fhome
             // 
@@ -1450,5 +1473,7 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox tbIDHv;
+        private System.Windows.Forms.Label label24;
     }
 }

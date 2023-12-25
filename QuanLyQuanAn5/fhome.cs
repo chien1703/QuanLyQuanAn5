@@ -716,5 +716,31 @@ namespace QuanLyQuanAn5
             tbemail.Text = dgv7.Rows[i].Cells[1].Value.ToString();
             tbhotenhv.Text = dgv7.Rows[i].Cells[2].Value.ToString();
         }
+
+        private void btnxoahv_Click(object sender, EventArgs e)
+        {
+            command = connection.CreateCommand();
+            command.CommandText = "delete from hoivien where SDT = @SDT";
+            command.Parameters.AddWithValue("@SDT", tbsdthv.Text);
+            command.ExecuteNonQuery();
+            loaddata12();
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnsuahv_Click(object sender, EventArgs e)
+        {
+            command = connection.CreateCommand();
+            command.CommandText = "UPDATE hoivien SET Email = @Email, HoTenHv = @HoTenHv, SDT = @SDT WHERE IDHv = @IDHv ";
+            command.Parameters.AddWithValue("@Email", tbemail.Text);
+            command.Parameters.AddWithValue("@HoTenHv", tbhotenhv.Text);
+            command.Parameters.AddWithValue("@SDT", tbsdthv.Text);
+            command.Parameters.AddWithValue("@IDHv", tbIDHv.Text);
+            command.ExecuteNonQuery();
+            loaddata12();
+        }
     }
 }
