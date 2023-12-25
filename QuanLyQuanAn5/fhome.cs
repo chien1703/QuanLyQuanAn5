@@ -16,7 +16,7 @@ namespace QuanLyQuanAn5
     {
         SqlConnection connection;
         SqlCommand command;
-        string str = @"Data Source=LAPTOP-DFVUFD44;Initial Catalog=QuanLyQuanAn5;Integrated Security=True";
+        string str = @"Data Source=DESKTOP-F166USU;Initial Catalog=QuanLyQuanAn5;Integrated Security=True";
         SqlDataAdapter adapter = new SqlDataAdapter();
         DataTable table = new DataTable();
 
@@ -139,6 +139,28 @@ namespace QuanLyQuanAn5
             adapter10.Fill(table10);
             dgv4.DataSource = table10;
         }
+        void loaddata11()
+        {
+            SqlDataAdapter adapter11 = new SqlDataAdapter();
+            DataTable table11 = new DataTable();
+            command = connection.CreateCommand();
+            command.CommandText = "select * from khohang";
+            adapter11.SelectCommand = command;
+            table11.Clear();
+            adapter11.Fill(table11);
+            dgv6.DataSource = table11;
+        }
+        void loaddata12()
+        {
+            SqlDataAdapter adapter12 = new SqlDataAdapter();
+            DataTable table12 = new DataTable();
+            command = connection.CreateCommand();
+            command.CommandText = "select * from hoivien";
+            adapter12.SelectCommand = command;
+            table12.Clear();
+            adapter12.Fill(table12);
+            dgv7.DataSource = table12;
+        }
         public fhome()
         {
             InitializeComponent();
@@ -190,6 +212,8 @@ namespace QuanLyQuanAn5
             loaddata2();
             loaddata4();
             loaddata5();
+            loaddata11();
+            loaddata12();
         }
         private int GetPriceByItemID(string itemID)
         {
@@ -563,6 +587,160 @@ namespace QuanLyQuanAn5
             currentTableType = "hoadon6";
             loaddata10();
             UpdateTotalPrice();
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnQLkhohang_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = tabPage6;
+        }
+
+        private void dgv6_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label18_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgv6_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int i;
+            i = dgv6.CurrentRow.Index;
+            tbmahh.Text = dgv6.Rows[i].Cells[0].Value.ToString();
+            tbtenhh.Text = dgv6.Rows[i].Cells[1].Value.ToString();
+            tbsoluonghh.Text = dgv6.Rows[i].Cells[2].Value.ToString();
+            tbgiahh.Text = dgv6.Rows[i].Cells[3].Value.ToString();
+            tbthanhtienhh.Text = dgv6.Rows[i].Cells[4].Value.ToString();
+        }
+
+        private void btnnhapkho_Click(object sender, EventArgs e)
+        {
+            command = connection.CreateCommand();
+            command.CommandText = "Insert into khohang values(@mahanghoa,@tenhanghoa, @soluong, @gia, @thanhtien )";
+            command.Parameters.AddWithValue("@mahanghoa", tbmahh.Text);
+            command.Parameters.AddWithValue("@tenhanghoa", tbtenhh.Text);
+            command.Parameters.AddWithValue("@soluong", tbsoluonghh.Text);
+            command.Parameters.AddWithValue("@gia", tbgiahh.Text);
+            command.Parameters.AddWithValue("@thanhtien", tbthanhtienhh.Text);
+            command.ExecuteNonQuery();
+            loaddata11();
+        }
+
+        private void btnxuatkho_Click(object sender, EventArgs e)
+        {
+            command = connection.CreateCommand();
+            command.CommandText = "delete from khohang where MaHangHoa = @mahanghoa";
+            command.Parameters.AddWithValue("@mahanghoa", tbmahh.Text);
+            command.ExecuteNonQuery();
+            loaddata11();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = tabPage7;
+        }
+
+        private void tabPage7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDoi_Click(object sender, EventArgs e)
+        {
+            if(int.TryParse(tbinput.Text, out int inputValue))
+            {
+                int factor = 1;
+                if (cbtien.SelectedItem != null)
+                {
+                    if (cbtien.SelectedItem.ToString() == "USD")
+                    {
+                        factor = 24250000;
+                    }
+                    else if (cbtien.SelectedItem.ToString() == "GBP")
+                    {
+                        factor = 30790200;
+                    }
+                    else if (cbtien.SelectedItem.ToString() == "KRW")
+                    {
+                        factor = 18612;
+                    }
+                    else if (cbtien.SelectedItem.ToString() == "JPA")
+                    {
+                        factor = 170247;
+                    }
+                }
+
+                int result = inputValue * factor;
+                tboutput.Text = result.ToString();
+            }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = tabPage8;
+        }
+
+        private void btnthemhv_Click(object sender, EventArgs e)
+        {
+            command = connection.CreateCommand();
+            command.CommandText = "Insert into hoivien values(@SDT,@Email, @HoTenHv)";
+            command.Parameters.AddWithValue("@SDT", tbsdthv.Text);
+            command.Parameters.AddWithValue("@Email", tbemail.Text);
+            command.Parameters.AddWithValue("@HoTenHv", tbhotenhv.Text);
+            command.ExecuteNonQuery();
+            loaddata12();
+        }
+
+        private void dgv7_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int i;
+            i = dgv7.CurrentRow.Index;
+            tbsdthv.Text = dgv7.Rows[i].Cells[0].Value.ToString();
+            tbemail.Text = dgv7.Rows[i].Cells[1].Value.ToString();
+            tbhotenhv.Text = dgv7.Rows[i].Cells[2].Value.ToString();
+        }
+
+        private void btnxoahv_Click(object sender, EventArgs e)
+        {
+            command = connection.CreateCommand();
+            command.CommandText = "delete from hoivien where SDT = @SDT";
+            command.Parameters.AddWithValue("@SDT", tbsdthv.Text);
+            command.ExecuteNonQuery();
+            loaddata12();
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnsuahv_Click(object sender, EventArgs e)
+        {
+            command = connection.CreateCommand();
+            command.CommandText = "UPDATE hoivien SET Email = @Email, HoTenHv = @HoTenHv, SDT = @SDT WHERE IDHv = @IDHv ";
+            command.Parameters.AddWithValue("@Email", tbemail.Text);
+            command.Parameters.AddWithValue("@HoTenHv", tbhotenhv.Text);
+            command.Parameters.AddWithValue("@SDT", tbsdthv.Text);
+            command.Parameters.AddWithValue("@IDHv", tbIDHv.Text);
+            command.ExecuteNonQuery();
+            loaddata12();
         }
     }
 }
