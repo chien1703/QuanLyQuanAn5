@@ -150,6 +150,17 @@ namespace QuanLyQuanAn5
             adapter11.Fill(table11);
             dgv6.DataSource = table11;
         }
+        void loaddata12()
+        {
+            SqlDataAdapter adapter12 = new SqlDataAdapter();
+            DataTable table12 = new DataTable();
+            command = connection.CreateCommand();
+            command.CommandText = "select * from hoivien";
+            adapter12.SelectCommand = command;
+            table12.Clear();
+            adapter12.Fill(table12);
+            dgv7.DataSource = table12;
+        }
         public fhome()
         {
             InitializeComponent();
@@ -201,7 +212,8 @@ namespace QuanLyQuanAn5
             loaddata2();
             loaddata4();
             loaddata5();
-            loaddata11();   
+            loaddata11();
+            loaddata12();
         }
         private int GetPriceByItemID(string itemID)
         {
@@ -673,6 +685,30 @@ namespace QuanLyQuanAn5
                 int result = inputValue * factor;
                 tboutput.Text = result.ToString();
             }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = tabPage8;
+        }
+
+        private void btnthemhv_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgv7_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int i;
+            i = dgv7.CurrentRow.Index;
+            tbhotenhv.Text = dgv7.Rows[i].Cells[0].Value.ToString();
+            tbsdthv.Text = dgv7.Rows[i].Cells[1].Value.ToString();
+            tbemail.Text = dgv7.Rows[i].Cells[2].Value.ToString();
         }
     }
 }
